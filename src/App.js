@@ -1,23 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import AsyncSelect from 'react-select/async';
+import {Options } from './Data';
+import "./App.css"
+
+const colors = {
+  control: (styles) => ({
+    ...styles
+  }),
+
+  option: (styles, {data, isFocused}) =>{
+    return {...styles, color: data.color, backgroundColor: isFocused ? data.color+'40' : 'default'}
+  },
+
+  multiValue: (styles, {data}) => {
+    return {
+      ...styles,
+      backgroundColor: data.color+"40",
+      color: data.color
+    }
+  },
+
+  multiValueLabel: (styles, {data}) => {
+    return {
+      ...styles,
+      color: data.color
+    }
+  }
+}
+
+const loadOptions = (searchValue, callback) => {
+    setTimeout(() => {
+      const filterOptions = Options.filter((option) =>
+        option.label.toLowerCase().includes(searchValue.toLowerCase())
+      );
+
+      callback(filterOptions);
+    }, 1000);
+  }
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <AsyncSelect
+        isMulti
+        defaultOptions
+        styles={colors}
+        loadOptions={loadOptions}
+      />
     </div>
   );
 }
