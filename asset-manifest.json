@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/bookwala_assignment/static/css/main.e9c2a0ce.css",
+    "main.js": "/bookwala_assignment/static/js/main.40640579.js",
+    "static/js/787.322d1eac.chunk.js": "/bookwala_assignment/static/js/787.322d1eac.chunk.js",
+    "index.html": "/bookwala_assignment/index.html",
+    "main.e9c2a0ce.css.map": "/bookwala_assignment/static/css/main.e9c2a0ce.css.map",
+    "main.40640579.js.map": "/bookwala_assignment/static/js/main.40640579.js.map",
+    "787.322d1eac.chunk.js.map": "/bookwala_assignment/static/js/787.322d1eac.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e9c2a0ce.css",
+    "static/js/main.40640579.js"
+  ]
+}
